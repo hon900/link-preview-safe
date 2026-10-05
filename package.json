@@ -1,14 +1,32 @@
 {
   "name": "link-preview-safe",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Safe Open Graph / link-preview fetcher. User URLs go through hostfence.",
   "type": "module",
   "main": "./src/index.js",
-  "exports": "./src/index.js",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.js",
+      "default": "./src/index.js"
+    }
+  },
   "license": "MIT",
   "repository": "github:hon900/link-preview-safe",
-  "engines": { "node": ">=18.18.0" },
+  "engines": {
+    "node": ">=18.18.0"
+  },
   "dependencies": {
-    "hostfence": "github:hon900/hostfence#v1.2.0"
+    "hostfence": "github:hon900/hostfence#v1.3.0"
+  },
+  "types": "./src/index.d.ts",
+  "files": [
+    "src",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.js"
   }
 }
